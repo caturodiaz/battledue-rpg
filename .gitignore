@@ -1,0 +1,11 @@
+# Godot: archivos generados y caché
+.godot/
+.import/
+export.cfg
+export_presets.cfg
+
+# Sistema operativo y editores
+.DS_Store
+Thumbs.db
+*.swp
+*~

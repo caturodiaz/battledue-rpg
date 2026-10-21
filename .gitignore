@@ -1,11 +1,23 @@
-# Godot: archivos generados y caché
+# Godot 4+ specific ignores
 .godot/
-.import/
-export.cfg
-export_presets.cfg
+/android/
 
-# Sistema operativo y editores
-.DS_Store
-Thumbs.db
-*.swp
+# Local backups and temporary files
+*.bak
+*.bak*
 *~
+*.tmp
+*.swp
+.DS_Store
+
+# Local sprite inspection and crop experiments
+assets/characters/negotu/generated/crop_preview*.png
+assets/characters/negotu/generated/inspection_grid.png
+assets/characters/negotu/generated/jump_rise_crop_test.png
+assets/characters/negotu/generated/jump_rise_inspection.png
+
+# Import metadata for excluded local inspection images
+assets/characters/negotu/generated/crop_preview*.png.import
+assets/characters/negotu/generated/inspection_grid.png.import
+assets/characters/negotu/generated/jump_rise_crop_test.png.import
+assets/characters/negotu/generated/jump_rise_inspection.png.import

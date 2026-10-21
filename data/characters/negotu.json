@@ -1,0 +1,23 @@
+{
+  "id": "negotu",
+  "name": "Negotu",
+  "species": "Humanoid",
+  "alignment": "Friends",
+  "power_type": "Animal",
+  "weapon": "Katana",
+  "color": "#5e008a",
+  "stats": {
+    "source": 2,
+    "speed": 3,
+    "control": 4,
+    "defense": 6,
+    "strength": 6,
+    "endurance": 5
+  },
+  "abilities": [
+    "Círculo Negro",
+    "Espíritu del Agua",
+    "Instinto del Capibara"
+  ],
+  "ultimate": "Marea del Guardián"
+}

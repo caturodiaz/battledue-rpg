@@ -1,0 +1,119 @@
+[gd_scene load_steps=13 format=3]
+
+[ext_resource type="Script" path="res://scripts/fighter.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/characters/negotu/animations/idle_01.png" id="2_idle"]
+[ext_resource type="Texture2D" path="res://assets/characters/negotu/animations/walk_01.png" id="3_walk_1"]
+[ext_resource type="Texture2D" path="res://assets/characters/negotu/animations/walk_02_v2.png" id="4_walk_2"]
+[ext_resource type="Texture2D" path="res://assets/characters/negotu/animations/block_01.png" id="5_block"]
+[ext_resource type="Texture2D" path="res://assets/characters/negotu/animations/light_attack_active_v1.png" id="6_attack"]
+
+[ext_resource type="Texture2D" path="res://assets/characters/negotu/animations/jump_takeoff.png" id="7_jump_takeoff"]
+[ext_resource type="Texture2D" path="res://assets/characters/negotu/animations/jump_rise.png" id="8_jump_rise"]
+[ext_resource type="Texture2D" path="res://assets/characters/negotu/animations/jump_apex.png" id="9_jump_apex"]
+[ext_resource type="Texture2D" path="res://assets/characters/negotu/animations/jump_fall.png" id="10_jump_fall"]
+[ext_resource type="Texture2D" path="res://assets/characters/negotu/animations/jump_land.png" id="11_jump_land"]
+
+[sub_resource type="CapsuleShape2D" id="Capsule"]
+radius = 52.5
+height = 130.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_negotu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_idle")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_walk_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_walk_2")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_block")
+}],
+"loop": true,
+"name": &"block",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_attack")
+}],
+"loop": false,
+"name": &"light_attack",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_attack")
+}],
+"loop": false,
+"name": &"heavy_attack",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_jump_takeoff")
+}],
+"loop": true,
+"name": &"jump_takeoff",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_jump_rise")
+}],
+"loop": true,
+"name": &"jump_rise",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_jump_apex")
+}],
+"loop": true,
+"name": &"jump_apex",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_jump_fall")
+}],
+"loop": true,
+"name": &"jump_fall",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_jump_land")
+}],
+"loop": true,
+"name": &"jump_land",
+"speed": 1.0
+}]
+
+
+[node name="Fighter" type="CharacterBody2D"]
+script = ExtResource("1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -40)
+shape = SubResource("Capsule")
+
+[node name="Visual" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -103)
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_negotu")
+animation = &"idle"
+autoplay = "idle"

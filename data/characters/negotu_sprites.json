@@ -1,0 +1,91 @@
+{
+  "character_id": "negotu",
+  "current_game_texture": "res://assets/characters/negotu/negotu_idle.png",
+  "sources": [
+    {
+      "path": "res://assets/characters/negotu/negotu_idle.png",
+      "dimensions": [1281, 1227],
+      "alpha": true,
+      "status": "approved_for_idle_reference",
+      "notes": "The current in-game texture. It is a single illustrated pose, not a sprite animation."
+    },
+    {
+      "path": "res://assets/characters/negotu/Six-Frame Anime Ronin Sprite Sheet.png",
+      "dimensions": [2172, 724],
+      "alpha": true,
+      "status": "reference_only_not_extractable",
+      "notes": "Although it depicts six poses, the first five overlap in the source pixels. It is a composed illustration, not a conventional grid or atlas."
+    },
+    {
+      "path": "res://assets/characters/negotu/generated/negotu_locomotion_block_source_v1.png",
+      "dimensions": [2172, 724],
+      "alpha": true,
+      "status": "generated_temporary_source",
+      "notes": "AI-generated reference-derived source, inspected before extraction. Its four isolated poses were copied to normalized animation frames; the source remains preserved for provenance."
+    },
+    {
+      "path": "res://assets/characters/negotu/generated/negotu_light_attack_source_v1.png",
+      "dimensions": [1281, 1227],
+      "alpha": true,
+      "status": "generated_temporary_source",
+      "notes": "Isolated active katana-slash pose, normalized as light_attack_active_v1.png and temporarily reused for heavy_attack."
+    },
+    {
+      "path": "res://assets/characters/negotu/generated/negotu_walk_alternate_source_v1.png",
+      "dimensions": [1254, 1254],
+      "alpha": true,
+      "status": "generated_temporary_source",
+      "notes": "Profile-right alternate walking step, normalized as walk_02_v2.png."
+    }
+  ],
+  "observed_poses": [
+    {
+      "order": 1,
+      "candidate_animation": "idle",
+      "status": "reference_only"
+    },
+    {
+      "order": 2,
+      "candidate_animation": "walk",
+      "status": "reference_only"
+    },
+    {
+      "order": 3,
+      "candidate_animation": "jump",
+      "status": "reference_only"
+    },
+    {
+      "order": 4,
+      "candidate_animation": "light_attack",
+      "status": "reference_only"
+    },
+    {
+      "order": 5,
+      "candidate_animation": "heavy_attack",
+      "status": "reference_only"
+    },
+    {
+      "order": 6,
+      "candidate_animation": "block",
+      "status": "reference_only"
+    }
+  ],
+  "required_new_source_poses": [
+    "idle frames with breathing and cloth motion",
+    "walk frames with planted alternating feet",
+    "jump takeoff, ascent, and descent",
+    "light_attack startup, active, and recovery",
+    "heavy_attack startup, active, and recovery",
+    "hit",
+    "defeat",
+    "special_circle_black"
+  ],
+  "integration_plan": {
+    "node": "AnimatedSprite2D",
+    "resource": "SpriteFrames",
+    "frame_canvas": [768, 768],
+    "pivot": "bottom_center",
+    "scale_rule": "Keep drawing scale unchanged; center each completed source pose in a 768x768 transparent canvas with its feet on the same baseline.",
+    "temporary_policy": "The generated temporary set supplies idle, two profile-right walk frames, block, and one active strike reused temporarily for light and heavy attacks. Do not synthesize jump, hit, defeat, or special frames from static artwork."
+  }
+}
